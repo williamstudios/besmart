@@ -84,7 +84,7 @@ if (empty($_SESSION["user"])) {
                   <label for="company" class=" form-control-label">Descripcion de reporte</label>
                   <textarea name="reporte" rows="2" class="form-control" disabled><?php echo $rbusca["Descripcion"]; ?></textarea>
                 </div>
-                <div class="form-group col-md-12 col-lg-12">
+                <div class="form-group col-md-4 col-lg-4">
                   <label for="company" class=" form-control-label">Asignado</label>
                   <select class="form-control select2" name="asignado" disabled>
                     <option value="">Seleccionar</option>
@@ -101,7 +101,14 @@ if (empty($_SESSION["user"])) {
                     ?>
                   </select>
                  </div>
-
+                 <div class="form-group col-md-4 col-lg-4">
+                   <label for="company" class=" form-control-label">Costo munucipio</label>
+                   <input class="form-control" type="text" value="0" name="municipio" id="municipio" placeholder="Costo toal" required>
+                 </div>
+                 <div class="form-group col-md-4 col-lg-4">
+                   <label for="company" class=" form-control-label">Costo ciudadano</label>
+                   <input class="form-control" type="text" value="0" name="ciudadano" id="ciudadano" placeholder="Costo toal" required>
+                 </div>
                  <?php
                  $barchivos = mysqli_query($con, "SELECT * FROM archivos WHERE id_peticion = '$id'");
                  $carch = 1;
@@ -132,7 +139,7 @@ if (empty($_SESSION["user"])) {
                  </script>
                  <div class="row paneles paneles1 col-md-12" id="panel1">
                    <button type="button" name="button" onclick="tablaarts()" class="btn btn-link">Agregar <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-                   <table id="artstable" class="table">
+                   <table id="artstable" class="table-responsive">
                        <tr>
                            <th></th>
                            <th>Concepto</th>
@@ -195,7 +202,7 @@ if (empty($_SESSION["user"])) {
                  <div class="row paneles paneles2 col-md-12" id="panel2" style="display:none;">
                    <button type="button" name="button" onclick="addcuadrilla()" class="btn btn-link">Agregar <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
 
-                   <table id="tablacuadrillas" class="table">
+                   <table id="tablacuadrillas" class="table-responsive">
                      <thead>
                          <tr>
                            <th></th>
@@ -274,7 +281,7 @@ if (empty($_SESSION["user"])) {
                  <div class="row paneles paneles3 col-md-12" id="panel3" style="display:none;">
                    <button type="button" name="button" onclick="addvehi()" class="btn btn-link">Agregar <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
 
-                   <table id="vehitabla" class="table">
+                   <table id="vehitabla" class="table-responsive">
                      <thead>
                        <tr>
                            <th></th>
